@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+   name: bluetest
+   labels:
+      app : bluetest
+spec:
+  replicas: 5
+  selector:
+     matchLabels:    
+       app: bluetest
+  template:
+      metadata: 
+       labels: 
+         app: bluetest
+      spec:
+        containers:
+        - name : bluetest
+          image : httpd
